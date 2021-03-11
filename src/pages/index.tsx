@@ -1,10 +1,12 @@
+import NavBar from '../components/NavBar';
+
 import { Container } from '../styles/pages/Home';
 
 
 export default function Home() {
   return (
     <Container>
-      <h1>Olá mundo</h1>
+      <NavBar />
     </Container>
   )
 }
