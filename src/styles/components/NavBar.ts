@@ -4,11 +4,7 @@ interface ContainerProps {
   showDropdownMenu: boolean;
 }
 
-interface DropdownProps {
-  isOpen: boolean;
-}
-
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.nav<ContainerProps>`
   transition: height 1s;
 
   width: 100%;
@@ -22,6 +18,7 @@ export const Container = styled.div<ContainerProps>`
   justify-content: center;
 
   position: fixed;
+  z-index: 999;
   top: 0;
   right: 0;
 
@@ -94,12 +91,20 @@ const appear = keyframes`
   }
 `;
 
-export const DropdownMenu = styled.div<DropdownProps>`
-  margin-top: 3rem;
+export const DropdownMenu = styled.div`
+  height: 12rem;
+  margin-top: 5.5rem;
 
-  animation: ${appear} 4.5s;
+  background-color: #7ACEC1;
+
+  animation: ${appear} 3s;
   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   ul {
+    padding: 2rem 0;
     list-style: none;
     
     display: flex;
