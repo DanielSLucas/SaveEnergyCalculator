@@ -27,7 +27,7 @@ const NavBar: React.FC = () => {
         </MenuButton>
 
         { showMenu && (
-          <DropdownMenu isOpen={showMenu}>
+          <DropdownMenu>
             <ul>
               <li>Home</li>
               <li>Smart grid</li>
