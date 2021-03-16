@@ -16,14 +16,14 @@ export default function SEO({
   shoulIndexPage = true
 }: SEOProps) {
   const pageTitle = `${title} ${!shouldExludeTitleSuffix ? '| SaveEneryCalculator' : ''}`
-  const pageImage = image ? `${process.env.VERCEL_URL}/${image}` : null;
+  // const pageImage = image ? `${process.env.VERCEL_URL}/${image}` : null;
 
   return (
     <Head>
       <title>{pageTitle}</title>
 
       { description && <meta name="description" content={description} /> }
-      { image && <meta name="image" content={pageImage} /> }
+      { image && <meta name="image" content={image} /> }
 
       { !shoulIndexPage && <meta name="robots" content="noindex,nofollow" /> }
 
