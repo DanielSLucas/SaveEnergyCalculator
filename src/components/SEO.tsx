@@ -16,14 +16,14 @@ export default function SEO({
   shoulIndexPage = true
 }: SEOProps) {
   const pageTitle = `${title} ${!shouldExludeTitleSuffix ? '| SaveEneryCalculator' : ''}`
-  // const pageImage = image ? `${process.env.VERCEL_URL}/${image}` : null;
+  const pageImage = image ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/${image}` : null;
 
   return (
     <Head>
       <title>{pageTitle}</title>
 
       { description && <meta name="description" content={description} /> }
-      { image && <meta name="image" content={image} /> }
+      { image && <meta name="image" content={pageImage} /> }
 
       { !shoulIndexPage && <meta name="robots" content="noindex,nofollow" /> }
 
@@ -34,6 +34,18 @@ export default function SEO({
       <meta name="msapplication-TileColor" content="#00A88F" />
       <meta name="referrer" content="no-referrer-when-downgrade" />
       <meta name="google" content="notranslate" />
+
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:locale" content="pt_BR" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={pageTitle} />
+      <meta property="og:image" content={pageImage} />
+      <meta property="og:image:secure_url" content={pageImage} />
+      <meta property="og:image:alt" content="Thumbnail" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="500" />
+      <meta property="og:image:height" content="500" />
     </Head>
   )
 }
