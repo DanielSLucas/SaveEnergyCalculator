@@ -14,11 +14,11 @@ export default function Home() {
       <ContentWrapper>
         <Intro>
           <Content>
-            <img src="images/lamp.svg" alt=""/>
-            <div>
+            {/* <img src="images/lamp.svg" alt=""/> */}
+            <article>
               <h1>Save Energy Calculator</h1>
               <p>Uma solução simples para cálculos complexos.</p>
-            </div>
+            </article>
           </Content>
         </Intro>
 

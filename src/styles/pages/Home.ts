@@ -38,29 +38,75 @@ export const Intro = styled.section`
     height: auto;
   }
 
-  div > div {
-    position: absolute;
-    bottom: 20%;
-
+  article {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
 
+    height: 40vh;
+    width: 100%;
+    background: url('images/lamp.svg') no-repeat center;
+    background-size: cover;
+
     h1 {
+      margin-top: 40%;
       font-family: Roboto Condensed;
-      font-size: 5vw;
+      font-size: 10vw;
       color: #006959;
+      text-align: center;
     }
 
     p {
-      font-size: 2vw;
+      font-size: 4vw;
       text-align: center;
     }
   }
 
+  @media (min-width: 425px) {
+    article {
+
+      h1 {
+        margin-top: 30%;
+        font-size: 8vw;
+      }
+
+      p {
+        font-size: 3vw;
+      }
+    }
+  } 
+
+  @media (min-width: 580px) {
+    article {
+
+      h1 {
+        margin-top: 30%;
+        font-size: 7vw;
+      }
+
+      p {
+        font-size: 2.5vw;
+      }
+    }
+  } 
+
+  @media (min-width: 768px) {
+    article {
+
+      h1 {
+        margin-top: 15%;
+        font-size: 5vw;
+      }
+
+      p {
+        font-size: 2vw;
+      }
+    }
+  } 
+
   @media (min-width: 1120px) {
-    div > div {
+    article {
 
       h1 {
         font-size: 3vw;
@@ -70,5 +116,15 @@ export const Intro = styled.section`
         font-size: 1.1vw;
       }
     }
-  }  
+  } 
+
+  @media (max-height: 500px) {
+    article {
+      height: 80vh;
+
+      h1 {
+        margin-top: 20%;
+      }
+    }
+  } 
 `;
