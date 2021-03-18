@@ -12,13 +12,13 @@ const NavBar: React.FC = () => {
       <div>
         <HorizontalMenu>          
           <li>
-            <Link href="#">
+            <Link href="/">
               <img src="logoSmall.svg" alt="Calculator"/>            
             </Link>
           </li>
-          <li> <Link href="#" >Home</Link> </li>
+          <li> <Link href="/" >Home</Link> </li>
           <li> <Link href="#" >Smart grid</Link> </li>
-          <li> <Link href="#" >Calculadora</Link> </li>          
+          <li> <Link href="/calculator" >Calculadora</Link> </li>          
         </HorizontalMenu>
 
         

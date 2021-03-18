@@ -33,6 +33,7 @@ export default class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <link rel="icon" href="/favicon.png" />
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />

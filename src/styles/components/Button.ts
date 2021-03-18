@@ -30,8 +30,17 @@ export const Container = styled.button`
     box-shadow: none;
   }
 
-  svg {
-    margin-right: 1rem;
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-left: 0.5rem;
+    }
   }
 
   @media(min-width: 425px) {

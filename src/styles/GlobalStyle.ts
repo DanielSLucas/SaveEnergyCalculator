@@ -29,5 +29,6 @@ export default createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
   }
 `;
