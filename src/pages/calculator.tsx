@@ -5,6 +5,7 @@ import { Container, ContentWrapper, Header, MainSection, InputGroup, ButtonsGrou
 import { FiArrowLeft, FiPlus, FiTrash2 } from 'react-icons/fi';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import Footer from '../components/Footer';
 
 const Calculator: React.FC = () => {
   return (
@@ -80,6 +81,7 @@ const Calculator: React.FC = () => {
             </section>
           </MainSection>
         </ContentWrapper>
+        {/* <Footer /> */}
       </Container>
     </>
   );

@@ -3,32 +3,20 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100%;
-
-  display: flex;
-  align-content: center;
-  justify-content: center;
 `;
 
 export const ContentWrapper = styled.main`
-  /* position: absolute;
-  top: 5.5rem; */
-  margin-top: 5.5rem;
-
-  height: 100%;
-  width: 100%;
+  height: 100%;  
+  width: 100%;  
   max-width: 1120px;
-
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
+  margin: 0 auto; 
 `;
 
 
 export const Header = styled.header` 
   margin-right: auto;
   margin-left: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 6.5rem;
 
   svg {
     height: 2.5rem;
@@ -38,16 +26,16 @@ export const Header = styled.header`
 `;
 
 export const MainSection = styled.div`
-  position: relative;
   width: 100%;
   height: 100%;
-
+  
   display: flex;
   align-content: center;
   justify-content: center;
 
   section {
     height: 100%;
+    
     h1 {
       font-family: Roboto Condensed;
       font-weight: bold;
@@ -59,12 +47,11 @@ export const MainSection = styled.div`
     & > div {
       width: 46rem;
       height: 100%;
-
       background: #FAFAFC;
       padding: 1rem 2rem;
 
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 0.5rem;
+      border-radius: 0.5rem 0.5rem 0 0;  
 
       h2 {
         margin-bottom: 0.5rem;

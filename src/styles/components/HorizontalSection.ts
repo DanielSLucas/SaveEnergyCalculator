@@ -77,12 +77,12 @@ export const Content = styled.div<ContentProps>`
   align-content: center;
   justify-content: center;
 
-  div:first-child {
+  article {
     width: 100%;
     margin-right: 2.5rem;
   }
 
-  div:last-child {
+  & > div {
     width: 100%;
   }
 
