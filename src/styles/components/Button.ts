@@ -11,7 +11,7 @@ export const Container = styled.button`
   align-items: center;
 
   color: #fff;
-  font-size: 5vw;
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: Roboto;
 
@@ -41,17 +41,5 @@ export const Container = styled.button`
       width: 1.5rem;
       margin-left: 0.5rem;
     }
-  }
-
-  @media(min-width: 425px) {
-    font-size: 4vw;
-  }
-
-  @media(min-width: 768px) {
-    height: 3rem;
-  }
-
-  @media(min-width: 1024px) {
-    font-size: 1.5rem;
   }
 `;

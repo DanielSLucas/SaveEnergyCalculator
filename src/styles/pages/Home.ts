@@ -50,81 +50,47 @@ export const Intro = styled.section`
     background-size: cover;
 
     h1 {
-      margin-top: 40%;
+      margin-top: 20%;
       font-family: Roboto Condensed;
-      font-size: 10vw;
+      font-size: 3rem;
       color: #006959;
       text-align: center;
     }
 
     p {
-      font-size: 4vw;
+      font-size: 1.125rem;
       text-align: center;
     }
   }
 
-  @media (min-width: 425px) {
-    article {
-
+  @media(min-width: 375px) and (max-width: 600px) {
+    article{
       h1 {
-        margin-top: 30%;
-        font-size: 8vw;
+        font-size: 2.5rem;   
       }
-
       p {
-        font-size: 3vw;
+        font-size: 1rem
       }
     }
-  } 
+  }
 
-  @media (min-width: 580px) {
+  @media(min-width: 850px) {
     article {
-
-      h1 {
-        margin-top: 30%;
-        font-size: 7vw;
-      }
-
-      p {
-        font-size: 2.5vw;
-      }
-    }
-  } 
-
-  @media (min-width: 768px) {
-    article {
-
       h1 {
         margin-top: 15%;
-        font-size: 5vw;
+      }
+    }
+  }
+
+  @media(min-width: 1024px) {
+    article {
+      h1 {
+        font-size: 3.5rem; 
       }
 
       p {
-        font-size: 2vw;
+        font-size: 1.125rem
       }
     }
-  } 
-
-  @media (min-width: 1120px) {
-    article {
-
-      h1 {
-        font-size: 3vw;
-      }
-
-      p {
-        font-size: 1.1vw;
-      }
-    }
-  } 
-
-  @media (max-height: 500px) {
-    article {
-      height: 80vh;
-
-      h1 {
-        margin-top: 20%;
-      }
-    }
-  } 
+  }
 `;

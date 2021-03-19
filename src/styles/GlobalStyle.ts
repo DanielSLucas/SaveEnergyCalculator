@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+  html {
+    font-size: 62.5%;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -30,5 +34,29 @@ export default createGlobalStyle`
     color: inherit;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  @media(min-width: 320px) {
+    html {
+      font-size: 70%;
+    }
+  }
+
+  @media(min-width: 375px) {
+    html {
+      font-size: 87.5%;
+    }
+  }
+
+  @media(min-width: 720px) {
+    html {
+      font-size: 93.75%;
+    }
+  }
+
+  @media(min-width: 1080px) {
+    html {
+      font-size: 100%;
+    }
   }
 `;

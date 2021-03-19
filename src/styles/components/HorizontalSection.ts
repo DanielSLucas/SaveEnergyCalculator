@@ -22,13 +22,13 @@ export const Container = styled.section<ContainerProps>`
   align-items: center;
   justify-content: center;
 
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
 
   img {
     width: 100%;
     height: auto;
   }
-  
+   
   article {
     width: 100%;
 
@@ -38,14 +38,14 @@ export const Container = styled.section<ContainerProps>`
     
     h1 {
       font-family: Roboto Condensed;
-      font-size: 8vw;
+      font-size: 3rem;
       color: #006959;
       margin-bottom: 1.5rem;
     }
 
     p {
       font-family: Roboto;
-      font-size: 5vw;
+      font-size:  1.5rem;
       text-align: justify;
     }    
 
@@ -54,18 +54,6 @@ export const Container = styled.section<ContainerProps>`
       width: 30%;
     }
   }  
-
-  @media(min-width: 1024px) {
-    article {
-      h1 {
-        font-size: 3rem;
-      }
-
-      p {
-        font-size: 1.5rem;
-      }
-    }
-  }
 `;
 
 export const Content = styled.div<ContentProps>`
@@ -86,7 +74,24 @@ export const Content = styled.div<ContentProps>`
     width: 100%;
   }
 
+  @media(min-width: 475px) {
+    width: 90%;    
+  }
+
+  @media(min-width: 600px) {
+    width: 70%;    
+  }
+
+  @media(min-width: 768px) {
+    width: 80%;    
+  }
+
+  @media(min-width: 850px) {
+    width: 70%;    
+  }
+
   @media(min-width: 1024px) {
+    width: 100%;
     flex-direction: row;
   }
 `;
