@@ -1,12 +1,16 @@
 import styled, { css } from 'styled-components';
+import { shade } from 'polished';
 
 interface ContainerProps {
   isFilled: boolean;
   isFocused: boolean;
   isCheckBox: boolean;
+  centered?: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
+  position: relative;
+
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -43,9 +47,28 @@ export const Container = styled.div<ContainerProps>`
     color: #454343;
   }
 
-  span {
-    display: none;
+  & > button {
+    border: 0;
+    background: 0;
+
+    position: absolute;
+    right: 0.5rem;
+    top: 2rem;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #00A88F;
+    }
   }
+
+  ${(props) => 
+    props.centered && 
+    css`
+      input {
+        text-align:center;
+      }
+    `}
 
   ${(props) =>
     props.isCheckBox &&
@@ -85,4 +108,63 @@ export const Container = styled.div<ContainerProps>`
         background: #f4f6ff;
       }
     `}
+`;
+
+export const DropdownContainer = styled.div`
+  position: absolute;
+  bottom: -6.5rem;
+  z-index: 2000;
+
+  background: #FCFCFC;
+  padding: 0.5rem;
+
+  border: 1px solid #d3d3d3;
+
+  height: 7rem;
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    width: 0.5rem;    
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 0.25rem;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${shade(0.1,"#888")}; 
+  }
+
+  ul {
+    width: 100%;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.5rem;
+      font-size: 1.125rem;
+      text-align: center;
+      border-bottom: 1px solid #d3d3d3;
+
+      button {
+        width: 100%;
+        border: 0;
+        background: 0;
+
+        &:hover {
+          background: #f3f3f3;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+
+    
+  }
 `;

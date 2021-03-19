@@ -18,6 +18,11 @@ export const Header = styled.header`
   margin-left: 0.5rem;
   margin-top: 6.5rem;
 
+  button {
+    border: 0;
+    background: 0;
+  }
+
   svg {
     height: 2.5rem;
     width: 2.5rem;
@@ -27,15 +32,12 @@ export const Header = styled.header`
 
 export const MainSection = styled.div`
   width: 100%;
-  height: 100%;
   
   display: flex;
   align-content: center;
   justify-content: center;
 
-  section {
-    height: 100%;
-    
+  section {   
     h1 {
       font-family: Roboto Condensed;
       font-weight: bold;
@@ -46,12 +48,12 @@ export const MainSection = styled.div`
 
     & > div {
       width: 46rem;
-      height: 100%;
+      
       background: #FAFAFC;
       padding: 1rem 2rem;
 
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 0.5rem 0.5rem 0 0;  
+      border-radius: 0.5rem;  
 
       h2 {
         margin-bottom: 0.5rem;
