@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import HorizontalSection from '../components/HorizontalSection';
@@ -7,6 +9,12 @@ import SEO from '../components/SEO';
 import { Container, ContentWrapper, Content, Intro } from '../styles/pages/Home';
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleNavigate = useCallback((route: string) => {    
+    router.push(`${route}`);
+  }, [router]);
+  
   return (
     <>
       <SEO 
@@ -31,12 +39,13 @@ export default function Home() {
             <article>
               <h1>Porque economizar energia?</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque porttitor mauris diam. Proin consectetur ante eu 
-                tempus porttitor. Aliquam neque est, congue sed semper at, 
-                ultricies efficitur odio. Proin a diam bibendum, varius ante in, 
-                convallis dolor. Curabitur a maximus eros. Vivamus nec tempus elit, 
-                gravida viverra justo.
+                Sabemos que o uso da energia elétrica provoca impactos 
+                insubstituíveis na sociedade, mas a questão é: como podemos, 
+                a partir dos nossos hábitos diários, mudar ou reduzir este dilema? 
+                Muitas pessoas consideram que a diminuição do uso doméstico de 
+                aparelhos eletrônicos ou eletroeletrônicos não fazem diferença alguma, 
+                mas estão errados, tanto no quesito de impactos na natureza, quanto, 
+                por incrível que pareça, no seu bolso.
               </p> 
               <span>
                 <Button>
@@ -59,15 +68,11 @@ export default function Home() {
             <article>
               <h1>Nossa Solução</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque porttitor mauris diam. Proin consectetur ante eu 
-                tempus porttitor. Aliquam neque est, congue sed semper at, 
-                ultricies efficitur odio. Proin a diam bibendum, varius ante in, 
-                convallis dolor. Curabitur a maximus eros. Vivamus nec tempus elit, 
-                gravida viverra justo.
+                Desenvolvemos uma calculadora que permite voce calcular 
+                seu gasto energético do mes ou somente de um aparelho especifico.
               </p> 
               <span>
-                <Button>
+                <Button type="button" onClick={() => handleNavigate('/calculator')}>
                   Acessar!
                 </Button>
               </span>                           
@@ -80,12 +85,12 @@ export default function Home() {
             <article>
               <h1>Smart grid</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque porttitor mauris diam. Proin consectetur ante eu 
-                tempus porttitor. Aliquam neque est, congue sed semper at, 
-                ultricies efficitur odio. Proin a diam bibendum, varius ante in, 
-                convallis dolor. Curabitur a maximus eros. Vivamus nec tempus elit, 
-                gravida viverra justo.
+                Você já parou para pensar o quão difícil é a nossa vida moderna 
+                sem eletricidade? E para mantermos isso precisamos de novos 
+                meios de administrá-la, isso é o smart grid, uma maneira de 
+                sabermos os nossos gastos de energia na hora para podermos 
+                economizar e incrementar novos meios de geração e distribuição 
+                de energia.
               </p> 
               <span>
                 <Button>
