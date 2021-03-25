@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 export const Container = styled.button`
-  height: 2.5rem;
+  height: fit-content;
+  min-height: 2.5rem;
   width: 100%;
   background: #00A88F;
 

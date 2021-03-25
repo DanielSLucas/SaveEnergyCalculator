@@ -37,7 +37,7 @@ export const MainSection = styled.div`
   align-content: center;
   justify-content: center;
 
-  section {   
+  section {
     h1 {
       font-family: Roboto Condensed;
       font-weight: bold;
@@ -68,6 +68,16 @@ export const MainSection = styled.div`
         margin-bottom: 1.5rem;
       }
     }
+  }
+
+  @media(max-width: 700px) {
+    section {
+      width: 90%;   
+      & > div {
+        width: 100%;
+        padding: 1rem 1rem;
+      }
+    }
   } 
 `;
 
@@ -77,6 +87,7 @@ export const InputGroup = styled.div`
   column-gap: 0.5rem;
 
   span {
+    width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -86,7 +97,7 @@ export const InputGroup = styled.div`
       border: 0;
       border-radius: 0.5rem;
 
-      width: 5rem;
+      width: 100%;
       height: 3rem;
       margin-bottom: 0.5rem;
 
@@ -98,6 +109,18 @@ export const InputGroup = styled.div`
         width: 1.5rem;
         height: 1.5rem;
         color: #FFF;
+      }
+    }
+  }
+
+  @media(max-width: 700px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    span {    
+      button {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
       }
     }
   }

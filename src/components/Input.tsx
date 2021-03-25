@@ -73,8 +73,8 @@ const Input: React.FC<InputProps> = ({
       {isShowingOptins && (
         <DropdownContainer>
           <ul>
-            {selectOptions.map(option => (
-              <li>
+            {selectOptions.map((option, index) => (
+              <li key={index}>
                 <button type="button" onClick={() =>  handleOptionSelected(option)}>
                   {option}
                 </button>

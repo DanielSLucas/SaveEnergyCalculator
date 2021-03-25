@@ -1,7 +1,14 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useCallback, useContext, useState } from 'react';
 
+interface EletronicItem {
+  name: string;
+  power: string;
+  hours: string;
+  kWh: string;
+}
 interface CalculatorContextData {
-  eletronicItens: object[];
+  eletronicItems: EletronicItem[];
+  updateEletronicItems(eletronicItems: Omit<EletronicItem, "kWh">[]): void;
 }
 
 const CalculatorContext = createContext<CalculatorContextData>(
@@ -9,8 +16,23 @@ const CalculatorContext = createContext<CalculatorContextData>(
 );
 
 export const CalculatorProvider: React.FC = ({ children }) => {
+  const [eletronicItems, setEletronicItems] = useState<EletronicItem[]>([{} as EletronicItem]); 
+  
+  const updateEletronicItems = useCallback((eletronicItems: Omit<EletronicItem, "kWh">[]) => {
+    const formattedEletronicItems = eletronicItems.map(eletronicItem => {
+      const kWh = (Number(eletronicItem.power) * Number(eletronicItem.hours)) / 1000;
+
+      return {
+        ...eletronicItem,
+        kWh: String(kWh),
+      }
+    });
+    console.log(formattedEletronicItems);
+    setEletronicItems(formattedEletronicItems);
+  }, [])
+
   return (
-    <CalculatorContext.Provider value={{ eletronicItens: [{}]}}>
+    <CalculatorContext.Provider value={{ eletronicItems, updateEletronicItems}}>
       {children}
     </CalculatorContext.Provider>
   );

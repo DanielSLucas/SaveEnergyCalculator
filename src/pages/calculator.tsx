@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
-import { useCallback, useState } from 'react';
+import { FormEvent, useCallback, useState } from 'react';
 import { FiArrowLeft, FiPlus, FiTrash2 } from 'react-icons/fi';
+
+import { useCalculator } from '../hooks/CalculatorContext';
 
 import SEO from '../components/SEO';
 import NavBar from '../components/NavBar';
@@ -23,6 +25,7 @@ interface EltronicItem {
 }
 
 const Calculator: React.FC = () => {
+  const { updateEletronicItems } = useCalculator();
   const router = useRouter();
 
   const [eletronicItems, setEletronicItems] = useState<EltronicItem[]>([{
@@ -54,11 +57,17 @@ const Calculator: React.FC = () => {
     
     setEletronicItems(updateEletronicItems);
 
-  }, [eletronicItems])
+  }, [eletronicItems]);
   
   const handleGoBack = useCallback(() => {
     router.back();
-  }, [router])
+  }, [router]);
+
+  const handleSubmit = useCallback((event: FormEvent) => {
+    event.preventDefault();
+
+    updateEletronicItems(eletronicItems);
+  }, [eletronicItems]);
 
   return (
     <>
@@ -88,51 +97,52 @@ const Calculator: React.FC = () => {
                 <h2>Adicione aparelhos eletroeletrônicos:</h2>
                 <hr/>
                 
-                {eletronicItems.map((eletronicItem, index) => (
-                  <InputGroup key={index}>
-                    <Input 
-                      label="Eletrônico"
-                      value={eletronicItem.name}
-                      onChange={e => setEletronicItemValue(index, 'name', e.target.value)}
-                      setValue={(value) => setEletronicItemValue(index, 'name', value) }
-                      selectOptions={[
-                        "Geladeira", 
-                        "Chuveiro", 
-                        "Secador", 
-                        "Máquina de lavar", 
-                        "Microondas"
-                      ]} 
-                    />
-                    <Input 
-                      label="Potência (Watts)" 
-                      value={eletronicItem.power}
-                      onChange={e => setEletronicItemValue(index, 'power', e.target.value)}
-                      centered
-                    />
-                    <Input 
-                      label="Horas de uso" 
-                      value={eletronicItem.hours}
-                      onChange={e => setEletronicItemValue(index, 'hours', e.target.value)} 
-                      centered                   
-                    />
-                    <span>
-                      <button type="button" onClick={() => removeEletronicItem(index)}>
-                        <FiTrash2 />
-                      </button>
-                    </span>
-                  </InputGroup>
-                ))}
-                
-                <ButtonsGroup>
-                  <Button icon={FiPlus} type="button" onClick={addNewScheduleItem}>
-                    Adicionar outro aparelho
-                  </Button>
+                <form onSubmit={handleSubmit}>
+                  {eletronicItems.map((eletronicItem, index) => (
+                    <InputGroup key={index}>
+                      <Input 
+                        label="Eletrônico"
+                        value={eletronicItem.name}
+                        onChange={e => setEletronicItemValue(index, 'name', e.target.value)}
+                        setValue={(value) => setEletronicItemValue(index, 'name', value) }
+                        selectOptions={[
+                          "Geladeira", 
+                          "Chuveiro", 
+                          "Secador", 
+                          "Máquina de lavar", 
+                          "Microondas"
+                        ]} 
+                      />
+                      <Input 
+                        label="Potência (Watts)" 
+                        value={eletronicItem.power}
+                        onChange={e => setEletronicItemValue(index, 'power', e.target.value)}
+                        centered
+                      />
+                      <Input 
+                        label="Horas de uso" 
+                        value={eletronicItem.hours}
+                        onChange={e => setEletronicItemValue(index, 'hours', e.target.value)} 
+                        centered                   
+                      />
+                      <span>
+                        <button type="button" onClick={() => removeEletronicItem(index)}>
+                          <FiTrash2 />
+                        </button>
+                      </span>
+                    </InputGroup>
+                  ))}
+                  
+                  <ButtonsGroup>
+                    <Button icon={FiPlus} type="button" onClick={addNewScheduleItem}>
+                      Add outro
+                    </Button>
 
-                  <Button type="button">
-                    Calcular!
-                  </Button>
-                </ButtonsGroup>
-
+                    <Button type="submit">
+                      Calcular!
+                    </Button>
+                  </ButtonsGroup>
+                </form>            
               </div>
             </section>
           </MainSection>
