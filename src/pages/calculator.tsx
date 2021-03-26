@@ -67,7 +67,9 @@ const Calculator: React.FC = () => {
     event.preventDefault();
 
     updateEletronicItems(eletronicItems);
-  }, [eletronicItems]);
+
+    router.push('/results');
+  }, [eletronicItems, router]);
 
   return (
     <>

@@ -1,18 +1,46 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { FiArrowLeft } from 'react-icons/fi';
+
+import { useCalculator } from '../hooks/CalculatorContext';
 
 import SEO from '../components/SEO';
 import NavBar from '../components/NavBar';
 
 import { Container, ContentWrapper, Header, MainSection } from '../styles/pages/Results';
+import formatValue from '../utils/formatValue';
+
 
 const Results: React.FC = () => {
+  const { eletronicItems } = useCalculator();
   const router = useRouter();
   
   const handleGoBack = useCallback(() => {
     router.back();
   }, [router]);
+
+  const totals = useMemo(() => {
+    const eletronicItemskWhWaste = eletronicItems.map(eletronicItem => eletronicItem.kWh);
+
+    const totalWaste = eletronicItemskWhWaste.reduce((accumulator, currentValue) => {
+      return String(Number(accumulator) + Number(currentValue));
+    });
+
+    const tax = 0.65;
+
+    const total = Number(Number(totalWaste).toFixed(1));
+    const monthTotal = total * 30;
+    const totalCost = formatValue(total * tax);
+    const monthTotalCost = formatValue(monthTotal * tax);
+
+    return {
+      total,
+      monthTotal,
+      totalCost,
+      monthTotalCost,
+    };
+
+  }, [eletronicItems]);
   
   return (
     <>
@@ -52,12 +80,15 @@ const Results: React.FC = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Chuveiro</td>  
-                      <td>5400</td>  
-                      <td>0.5</td>  
-                      <td>2.7</td>  
-                    </tr>    
+
+                    {eletronicItems.map((eletronicItem, index) => (
+                      <tr key={index}>
+                        <td>{eletronicItem.name}</td>  
+                        <td>{eletronicItem.power}</td>  
+                        <td>{eletronicItem.hours}</td>  
+                        <td>{eletronicItem.kWh}</td>  
+                      </tr> 
+                    ))}                       
                   </tbody>                
                 </table>
 
@@ -68,18 +99,18 @@ const Results: React.FC = () => {
                   <ul>
                     <div>
                       <li>
-                        <strong>Total de kWh</strong>: 2.7
+                        <strong>Total de kWh</strong>: {totals.total}
                       </li>
                       <li>
-                        <strong>Total no mês</strong>: 81
+                        <strong>Total no mês</strong>: {totals.monthTotal}
                       </li>
                     </div>
                     <div>
                       <li>
-                        <strong>Total em $</strong>: 2.7 * 0,65
+                        <strong>Total em $</strong>: {totals.totalCost}
                       </li>
                       <li>
-                        <strong>Total mensal em $</strong>: 81 * 0,65
+                        <strong>Total mensal em $</strong>: {totals.monthTotalCost}
                       </li>
                     </div>
                   </ul>
