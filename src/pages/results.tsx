@@ -62,7 +62,27 @@ const Results: React.FC = () => {
                 </table>
 
                 <footer>
-                  Total: 2.7 - Total no mês: 81
+                  <span>
+                    *Os resultados estão aproximados, utilizando uma taxa de R$0,65 o kWh.
+                  </span>
+                  <ul>
+                    <div>
+                      <li>
+                        <strong>Total de kWh</strong>: 2.7
+                      </li>
+                      <li>
+                        <strong>Total no mês</strong>: 81
+                      </li>
+                    </div>
+                    <div>
+                      <li>
+                        <strong>Total em $</strong>: 2.7 * 0,65
+                      </li>
+                      <li>
+                        <strong>Total mensal em $</strong>: 81 * 0,65
+                      </li>
+                    </div>
+                  </ul>
                 </footer>
               </div>
             </section>

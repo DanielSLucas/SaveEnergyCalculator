@@ -92,6 +92,37 @@ export const MainSection = styled.div`
     }
   }
 
+  footer {
+    margin-top: 0.5rem;
+    text-align: center;
+    span {
+      color: #B6B6B6;
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+        strong {
+          color: #006959;
+        }
+      }
+
+      div:first-child {
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      div:last-child {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
   @media(max-width: 700px) {
     section {
       width: 90%;   
@@ -101,4 +132,12 @@ export const MainSection = styled.div`
       }
     }
   } 
+
+  @media(max-width: 425px) {
+    footer {
+      div {
+        flex-direction: column;
+      }
+    }
+  }
 `;
