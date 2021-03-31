@@ -16,7 +16,7 @@ export default function SEO({
   shoulIndexPage = true
 }: SEOProps) {
   const pageTitle = `${title} ${!shouldExludeTitleSuffix ? '| SaveEneryCalculator' : ''}`
-  const pageImage = image ? `${process.env.NEXT_PUBLIC_SITE_URL}/${image}` : null;
+  const pageImage = image ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/${image}` : null;
 
   return (
     <Head>
