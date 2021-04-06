@@ -76,7 +76,6 @@ const Calculator: React.FC = () => {
       <SEO 
         title="Calculator" 
         description="Calculadora da consumo"
-        image="brand.jpeg"
         shouldExludeTitleSuffix
       />
 

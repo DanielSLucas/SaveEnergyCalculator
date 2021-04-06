@@ -20,7 +20,6 @@ export default function Home() {
       <SEO 
         title="Home" 
         description="Solução para calculos de conta de luz"
-        image="brand.jpeg"
       />
       <Container>
         <NavBar />

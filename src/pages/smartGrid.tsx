@@ -24,7 +24,6 @@ const SmartGrid: React.FC = () => {
       <SEO 
         title="Smart grid" 
         description="Uma maneira inteligente de produzir e consumir energia"
-        image="brand.jpeg"
         shouldExludeTitleSuffix
       />
 

@@ -24,7 +24,6 @@ const ImpactsOnNature: React.FC = () => {
       <SEO 
         title="Impactos na natureza" 
         description="Impactos do consumo de energia na natureza"
-        image="brand.jpeg"
         shouldExludeTitleSuffix
       />
 

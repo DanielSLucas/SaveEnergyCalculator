@@ -3,7 +3,6 @@ import Head from 'next/head';
 interface SEOProps {
   title: string;
   description?: string;
-  image?: string;
   shouldExludeTitleSuffix?: boolean;
   shoulIndexPage?: boolean;
 }
@@ -11,19 +10,16 @@ interface SEOProps {
 export default function SEO({
   title,
   description,
-  image,
   shouldExludeTitleSuffix = false,
   shoulIndexPage = true
 }: SEOProps) {
   const pageTitle = `${title} ${!shouldExludeTitleSuffix ? '| SaveEneryCalculator' : ''}`
-  const pageImage = image ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/${image}` : null;
 
   return (
     <Head>
       <title>{pageTitle}</title>
 
       { description && <meta name="description" content={description} /> }
-      { image && <meta name="image" content={pageImage} /> }
 
       { !shoulIndexPage && <meta name="robots" content="noindex,nofollow" /> }
 
