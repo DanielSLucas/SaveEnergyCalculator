@@ -17,7 +17,7 @@ const NavBar: React.FC = () => {
             </Link>
           </li>
           <li> <Link href="/" >Home</Link> </li>
-          <li> <Link href="#" >Smart grid</Link> </li>
+          <li> <Link href="/smartGrid" >Smart grid</Link> </li>
           <li> <Link href="/calculator" >Calculadora</Link> </li>          
         </HorizontalMenu>
 
@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
           <DropdownMenu>
             <ul>
               <li><Link href="/" >Home</Link></li>
-              <li><Link href="#" >Smart grid</Link></li>
+              <li><Link href="/smartGrid" >Smart grid</Link></li>
               <li><Link href="/calculator" >Calculadora</Link></li>
             </ul>
           </DropdownMenu>

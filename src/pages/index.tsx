@@ -48,7 +48,7 @@ export default function Home() {
                 por incrível que pareça, no seu bolso.
               </p> 
               <span>
-                <Button>
+                <Button type="button" onClick={() => handleNavigate('/impactsOnNature')}>
                   Acessar!
                 </Button>
               </span>                           
@@ -93,7 +93,7 @@ export default function Home() {
                 de energia.
               </p> 
               <span>
-                <Button>
+                <Button type="button" onClick={() => handleNavigate('/smartGrid')}>
                   Acessar!
                 </Button>
               </span>                           

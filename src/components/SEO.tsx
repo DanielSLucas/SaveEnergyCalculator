@@ -27,6 +27,7 @@ export default function SEO({
 
       { !shoulIndexPage && <meta name="robots" content="noindex,nofollow" /> }
 
+      <meta name="image" content="brand.jpeg" />
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="MobileOptimized" content="320" />
       <meta name="HandheldFriendly" content="True" />
@@ -40,8 +41,8 @@ export default function SEO({
       <meta property="og:locale" content="pt_BR" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={pageTitle} />
-      <meta property="og:image" itemProp="image" content={pageImage} />
-      <meta property="og:image:secure_url" content={pageImage} />
+      <meta property="og:image" itemProp="image" content="brand.jpeg" />
+      <meta property="og:image:secure_url" content="brand.jpeg" />
       <meta property="og:image:alt" content="Thumbnail" />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="500" />
