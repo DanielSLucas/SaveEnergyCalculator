@@ -1,18 +1,34 @@
 import { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { FiArrowLeft } from 'react-icons/fi';
+import { Pie, defaults } from 'react-chartjs-2';
 
 import { useCalculator } from '../hooks/CalculatorContext';
 
 import SEO from '../components/SEO';
 import NavBar from '../components/NavBar';
 
-import { Container, ContentWrapper, Header, MainSection } from '../styles/pages/Results';
+import { Container, ContentWrapper, Header, MainSection, ChartContainer } from '../styles/pages/Results';
 import formatValue from '../utils/formatValue';
+import generateRandomColor from '../utils/generateRandomColor';
 
+interface EletronicItem {
+  name: string;
+  power: string;
+  hours: string;
+  kWh: string;
+}
 
 const Results: React.FC = () => {
-  const { eletronicItems } = useCalculator();
+  // const { eletronicItems } = useCalculator();
+  const eletronicItems: EletronicItem[] = [
+    { name: "Geladeira", power: "3400", hours: "12", kWh: "40.8"},
+    { name: "Chuveiro", power: "500", hours: "1", kWh: "0.5"},
+    { name: "Televisao", power: "300", hours: "4", kWh: "1.2"},
+    { name: "Computador", power: "400", hours: "24", kWh: "1.2"},
+    { name: "Luz", power: "30", hours: "18", kWh: "0.54"}
+  ];
+
   const router = useRouter();
   
   const handleGoBack = useCallback(() => {
@@ -69,6 +85,22 @@ const Results: React.FC = () => {
                 <h2>Resultados:</h2>
                 <hr/>                            
 
+                <ChartContainer>
+                  <Pie
+                    width={1}
+                    height={1}
+                    data={{                    
+                      labels: eletronicItems.map(item => item.name),
+                      datasets: [{
+                        ... defaults,
+                        label: 'Gasto por item',
+                        data: eletronicItems.map(item => Number(item.kWh)),
+                        backgroundColor: eletronicItems.map(item => generateRandomColor()),
+                      }],                      
+                    }}
+                  />
+                </ChartContainer>
+              
                 <table>
                   <thead>
                     <tr>

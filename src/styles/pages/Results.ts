@@ -76,6 +76,7 @@ export const MainSection = styled.div`
       table {
         width: 100%;
         text-align: center;
+        margin-top: 2rem;
 
         thead th {
           font-size: 1.5rem;
@@ -140,4 +141,9 @@ export const MainSection = styled.div`
       }
     }
   }
+`;
+
+export const ChartContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
 `;

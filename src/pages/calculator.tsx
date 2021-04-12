@@ -105,14 +105,14 @@ const Calculator: React.FC = () => {
                         label="Eletrônico"
                         value={eletronicItem.name}
                         onChange={e => setEletronicItemValue(index, 'name', e.target.value)}
-                        setValue={(value) => setEletronicItemValue(index, 'name', value) }
-                        selectOptions={[
-                          "Geladeira", 
-                          "Chuveiro", 
-                          "Secador", 
-                          "Máquina de lavar", 
-                          "Microondas"
-                        ]} 
+                        // setValue={(value) => setEletronicItemValue(index, 'name', value) }
+                        // selectOptions={[
+                        //   "Geladeira", 
+                        //   "Chuveiro", 
+                        //   "Secador", 
+                        //   "Máquina de lavar", 
+                        //   "Microondas"
+                        // ]} 
                       />
                       <Input 
                         label="Potência (Watts)" 
