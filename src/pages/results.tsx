@@ -20,15 +20,7 @@ interface EletronicItem {
 }
 
 const Results: React.FC = () => {
-  // const { eletronicItems } = useCalculator();
-  const eletronicItems: EletronicItem[] = [
-    { name: "Geladeira", power: "3400", hours: "12", kWh: "40.8"},
-    { name: "Chuveiro", power: "500", hours: "1", kWh: "0.5"},
-    { name: "Televisao", power: "300", hours: "4", kWh: "1.2"},
-    { name: "Computador", power: "400", hours: "24", kWh: "1.2"},
-    { name: "Luz", power: "30", hours: "18", kWh: "0.54"}
-  ];
-
+  const { eletronicItems } = useCalculator();
   const router = useRouter();
   
   const handleGoBack = useCallback(() => {
