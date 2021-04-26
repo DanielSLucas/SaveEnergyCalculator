@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import { FiFacebook, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import {
   Content,
   FooterContainer,
@@ -17,43 +16,13 @@ const Footer: React.FC = () => {
         <FooterContainer>
           <Links>
             <List>
-              <strong>Produtos</strong>
+              <strong>Projeto integrador UNISAL</strong>
               <ul>
-                <li>Lorem</li>
-                <li>Ipsum</li>
-                <li>Dolor</li>
-                <li>Sia amet</li>
-              </ul>
-            </List>
-
-            <List>
-              <strong>Company</strong>
-              <ul>
-                <li>Lorem</li>
-                <li>Ipsum</li>
-                <li>Dolor</li>
-                <li>Sia amet</li>
-              </ul>
-            </List>
-
-            <List>
-              <strong>Social</strong>
-              <ul>
-                <li>
-                  <a href="#">
-                    <FiFacebook />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <FiInstagram />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <FiLinkedin />
-                  </a>
-                </li>
+                <li>Daniel Lucas</li>
+                <li>Fernando Martins</li>
+                <li>Liandra Meirelles</li>
+                <li>Victor Emanuel</li>
+                <li>Vitor Aarão</li>
               </ul>
             </List>
           </Links>
