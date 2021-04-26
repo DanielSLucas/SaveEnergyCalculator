@@ -37,6 +37,8 @@ export const MainSection = styled.div`
   align-content: center;
   justify-content: center;
 
+  margin-bottom: 2rem;
+
   section {
     width: 90%;
     h1 {
@@ -45,6 +47,34 @@ export const MainSection = styled.div`
       font-size: 3rem;
       color: #006959;
       margin-bottom: 1rem;
+    }
+    
+    h2 {
+      font-family: Roboto Condensed;
+      font-weight: bold;
+      font-size: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      p a {
+        text-decoration: underline;
+      }
+    }
+
+    ul:last-child {
+      list-style: disc;
+      li {
+        margin-left: 3rem;
+        p {
+          text-indent: 0;
+        }
+      }
     }
 
     img {
@@ -56,6 +86,7 @@ export const MainSection = styled.div`
       font-size: 1.5rem;
       margin-top: 1rem;
       text-align: justify;
+      text-indent: 3rem;
       color: #9a9a9a;
     }
   }
