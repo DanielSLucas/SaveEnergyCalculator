@@ -50,25 +50,26 @@ const SmartGrid: React.FC = () => {
 
               <p>
                 Nossa rede elétrica foi construída há mais de 100 anos e até hoje 
-                o modelo de distribuição que usamos é basicamente o mesmo de lá 
-                pra cá, a energia produzida vai para os distribuidores e depois 
-                para as casas e negócios, um dos grandes problemas desse método 
-                e que a produtora de energia sempre está trabalhando ao máximo 
-                para entregar toda a energia necessária pois só ela faz o trabalho 
-                nessa via de mão única, fazendo com que caso ocorra dos fios de 
-                energia quebrarem ou ela não conseguir produzir energia suficiente 
-                ocorre os apagões, o que pode causar acidentes e fatalidades.
+                o modelo de distribuição que usamos é basicamente o mesmo. 
+                A energia produzida vai para os distribuidores e depois para as 
+                casas e negócios, porém um dos maiores problemas desse método é 
+                que a produtora de energia sempre está trabalhando ao máximo para 
+                entregar toda a energia necessária, já que só ela faz o trabalho 
+                nessa via de mão única. Portanto há sempre o risco de ocorrer o 
+                rompimento dos fios de energia ou a impossibilidade de produzir 
+                energia suficiente, ocasionando apagões e possíveis acidentes e 
+                fatalidades.
               </p>
 
               <p>
-                A Smart Grid serve para que ao mesmo tempo que você receba energia 
-                elétrica, receba os dados dela e repasse para a distribuidora, 
-                fazendo assim uma comunicação direta de qualquer coisa que acontecer 
-                e enviando para o cliente os gastos na hora em vez de só no final 
-                do mês, assim a pessoa recebe via e-mail, sms ou aplicativo qualquer 
-                coisa relacionada a sua rede elétrica e corrigir os problemas de 
-                maneira remota sem ter que mandar uma equipe para o local. Essa 
-                rede inteligente também poderá permitir conexão com outros tipos 
+                A Smart Grid serve para que, ao mesmo tempo que você recebe energia 
+                elétrica, você também recebe os dados dela e repasse para a distribuidora, 
+                fazendo assim uma comunicação direta de qualquer acontecimento. 
+                É enviado para o cliente os gastos instantaneamente em vez de só 
+                no final do mês, assim a pessoa recebe via e-mail, sms ou aplicativo 
+                a movimentação relacionada a sua rede elétrica, permitindo corrigir 
+                problemas de maneira remota sem ter que mandar uma equipe para o local.
+                Essa rede inteligente também poderá permitir conexão com outros tipos 
                 de fonte de energia, tipo a usina eólica e solar, permitindo que 
                 a pessoa produza e use energia de sua própria casa, podendo assim 
                 devolver para a rede caso o consumo seja menor que o que está 
