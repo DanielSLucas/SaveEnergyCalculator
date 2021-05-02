@@ -47,6 +47,7 @@ export const Container = styled.section<ContainerProps>`
       font-family: Roboto;
       font-size:  1.5rem;
       text-align: justify;
+      text-indent: 3rem;
     }    
 
     span {

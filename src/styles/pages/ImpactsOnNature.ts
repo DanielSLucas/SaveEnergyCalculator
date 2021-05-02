@@ -37,6 +37,8 @@ export const MainSection = styled.div`
   align-content: center;
   justify-content: center;
 
+  margin-bottom: 2rem;
+
   section {
     width: 90%;
     h1 {
@@ -56,6 +58,7 @@ export const MainSection = styled.div`
       font-size: 1.5rem;
       margin-top: 1rem;
       text-align: justify;
+      text-indent: 3rem;
       color: #9a9a9a;
     }
   }
@@ -65,4 +68,13 @@ export const MainSection = styled.div`
       width: 70%;   
     }
   } 
+`;
+
+export const ImageContainer = styled.div`
+  width: 100%;
+
+  margin: 2rem 0;
+
+  display: flex;
+  justify-content: center;
 `;
