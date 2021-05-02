@@ -25,39 +25,46 @@ interface EltronicItem {
 }
 
 const Calculator: React.FC = () => {
-  const { updateEletronicItems } = useCalculator();
+  const { updateEletronicItems, eletronicItems } = useCalculator();
   const router = useRouter();
 
-  const [eletronicItems, setEletronicItems] = useState<EltronicItem[]>([{
-    name: "", power: "", hours: ""
-  }]);
+  const [newEletronicItems, setNewEletronicItems] = useState<EltronicItem[]>(() => {
+
+    if (eletronicItems) {
+      return eletronicItems;
+    }
+
+    return [{
+      name: "", power: "", hours: ""
+    }];
+  });
 
   const addNewScheduleItem = useCallback(() => {
-    setEletronicItems([
-      ...eletronicItems,
+    setNewEletronicItems([
+      ...newEletronicItems,
       { name: "", power: "", hours: "" }
     ])
-  }, [eletronicItems]);
+  }, [newEletronicItems]);
 
   const setEletronicItemValue = useCallback(
     (position: number, field: string, value: string) => {
-      const updateEletronicItems = eletronicItems.map((eletronicItem, index) => {
+      const updateEletronicItems = newEletronicItems.map((eletronicItem, index) => {
         if (index === position) {
           return { ...eletronicItem, [field]: value };
         }
         return eletronicItem;
       });
-      setEletronicItems(updateEletronicItems);
+      setNewEletronicItems(updateEletronicItems);
     }, 
-    [eletronicItems]
+    [newEletronicItems]
   );
 
   const removeEletronicItem = useCallback((position: number) => {
-    const updateEletronicItems = eletronicItems.filter((_item, index) => index !== position);    
+    const updateEletronicItems = newEletronicItems.filter((_item, index) => index !== position);    
     
-    setEletronicItems(updateEletronicItems);
+    setNewEletronicItems(updateEletronicItems);
 
-  }, [eletronicItems]);
+  }, [newEletronicItems]);
   
   const handleGoBack = useCallback(() => {
     router.back();
@@ -66,10 +73,10 @@ const Calculator: React.FC = () => {
   const handleSubmit = useCallback((event: FormEvent) => {
     event.preventDefault();
 
-    updateEletronicItems(eletronicItems);
+    updateEletronicItems(newEletronicItems);
 
     router.push('/results');
-  }, [eletronicItems, router]);
+  }, [newEletronicItems, router]);
 
   return (
     <>
@@ -99,7 +106,7 @@ const Calculator: React.FC = () => {
                 <hr/>
                 
                 <form onSubmit={handleSubmit}>
-                  {eletronicItems.map((eletronicItem, index) => (
+                  {newEletronicItems.map((eletronicItem, index) => (
                     <InputGroup key={index}>
                       <Input 
                         label="Eletrônico"

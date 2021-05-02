@@ -11,6 +11,7 @@ import NavBar from '../components/NavBar';
 import { Container, ContentWrapper, Header, MainSection, ChartContainer } from '../styles/pages/Results';
 import formatValue from '../utils/formatValue';
 import generateRandomColor from '../utils/generateRandomColor';
+import Footer from '../components/Footer';
 
 interface EletronicItem {
   name: string;
@@ -122,18 +123,18 @@ const Results: React.FC = () => {
                   <ul>
                     <div>
                       <li>
-                        <strong>Total de kWh</strong>: {totals.total}
+                        <strong>Total</strong>: {totals.total} kWh
                       </li>
                       <li>
-                        <strong>Total no mês</strong>: {totals.monthTotal}
+                        <strong>Total mesal</strong>: {totals.monthTotal} kWh
                       </li>
                     </div>
                     <div>
                       <li>
-                        <strong>Total em $</strong>: {totals.totalCost}
+                        <strong>Custo</strong>: {totals.totalCost}
                       </li>
                       <li>
-                        <strong>Total mensal em $</strong>: {totals.monthTotalCost}
+                        <strong>Custo mensal</strong>: {totals.monthTotalCost}
                       </li>
                     </div>
                   </ul>
@@ -142,6 +143,7 @@ const Results: React.FC = () => {
             </section>
           </MainSection>
         </ContentWrapper>
+        <Footer />
       </Container>
     </>
   );

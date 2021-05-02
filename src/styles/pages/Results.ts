@@ -10,6 +10,7 @@ export const ContentWrapper = styled.main`
   width: 100%;  
   max-width: 1120px;
   margin: 0 auto; 
+  margin-bottom: 3rem;
 `;
 
 
