@@ -1,0 +1,134 @@
+[
+    {
+        "name": "Ar Condicionado 7500 btu",
+        "power": 1000
+    },
+    {
+        "name": "Ar Condicionado 10000 btu",
+        "power": 1350
+    },
+    {
+        "name": "Ar Condicionado 12000 btu",
+        "power": 1450
+    },
+    {
+        "name": "Ar Condicionado 15000 btu",
+        "power": 2000
+    },
+    {
+        "name": "Ar Condicionado 18000 btu",
+        "power": 2100
+    },
+    {
+        "name": "TV 32",
+        "power": 60
+    },
+    {
+        "name": "TV 40",
+        "power": 75
+    },
+    {
+        "name": "TV 50",
+        "power": 110
+    },
+    {
+        "name": "TV 55",
+        "power": 150
+    },
+    {
+        "name": "TV 65",
+        "power": 195
+    },
+    {
+        "name": "TV 75",
+        "power": 245
+    },
+    {
+        "name": "Aspirador de pó",
+        "power": 300
+    },
+    {
+        "name": "Batedeira",
+        "power": 120
+    },
+    {
+        "name": "Cafeteira elétrica",
+        "power": 600
+    },
+    {
+        "name": "Churrasqueira elétrica",
+        "power": 3200
+    },
+    {
+        "name": "Chuveiro elétrico",
+        "power": 3800
+    },
+    {
+        "name": "Espremedor de frutas",
+        "power": 65
+    },
+    {
+        "name": "Ferro elétrico",
+        "power": 1000
+    },
+    {
+        "name": "Fogão elétrico 2 bocas",
+        "power": 3000
+    },
+    {
+        "name": "Fogão elétrico 4 bocas",
+        "power": 6000
+    },
+    {
+        "name": "Forno elétrico pequeno",
+        "power": 1500
+    },
+    {
+        "name": "Forno elétrico grande",
+        "power": 4500
+    },
+    {
+        "name": "Forno microondas",
+        "power": 1500
+    },
+    {
+        "name": "Geladeira simples",
+        "power": 200
+    },
+    {
+        "name": "Geladeira duplex",
+        "power": 450
+    },
+    {
+        "name": "Grill",
+        "power": 1000
+    },
+    {
+        "name": "Impressora",
+        "power": 45
+    },
+    {
+        "name": "Liquidificador",
+        "power": 200
+    },
+    {
+        "name": "Lavadora de louca",
+        "power": 1500
+    },
+    {
+        "name": "Máquina de lavar roupa",
+        "power": 1000
+    },
+    {
+        "name": "Secador de cabelo",
+        "power": 1000
+    },
+    {
+        "name": "Ventilador",
+        "power": 100
+    },
+    {
+        "name": "Panela elétrica",
+        "power": 900
+    }
+]

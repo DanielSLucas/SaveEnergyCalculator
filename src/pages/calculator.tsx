@@ -18,6 +18,7 @@ import {
   ButtonsGroup 
 } from '../styles/pages/Calculator';
 
+import eletronicDevices from '../../public/aparelhosEletronicos.json';
 interface EltronicItem {
   name: string;
   power: string;
@@ -112,6 +113,8 @@ const Calculator: React.FC = () => {
                         label="Eletrônico"
                         value={eletronicItem.name}
                         onChange={e => setEletronicItemValue(index, 'name', e.target.value)}
+                        setValue={(value) => setEletronicItemValue(index, 'name', value) }
+                        selectOptions={eletronicDevices.map(device => device.name).sort()} 
                       />
                       <Input 
                         label="Potência (Watts)" 
