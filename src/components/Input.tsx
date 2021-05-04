@@ -30,13 +30,20 @@ const Input: React.FC<InputProps> = ({
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
-  }, []);
+    if (selectOptions) {
+      setIsShowingOptins(true);
+    }    
+  }, [selectOptions]);
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
-
+    if (selectOptions) {
+      setTimeout(() => {
+        setIsShowingOptins(false);
+      }, 100);
+    }    
     setIsFilled(!!inputRef.current?.value);
-  }, []);
+  }, [selectOptions]);
 
   const toggleOptions = useCallback(() => {
     setIsShowingOptins(!isShowingOptins);
@@ -44,18 +51,21 @@ const Input: React.FC<InputProps> = ({
 
   const handleOptionSelected = useCallback((optionValue: string) => {
     setValue(optionValue);
+    setIsFilled(true);
     setIsShowingOptins(false);
   }, []);
 
   useEffect(() => {
-    if (inputRef.current.value === '' || !inputRef.current.value) {
-      return setCurrentlyShowingSelectOptions(selectOptions);
-    } else {
-
-      const filteredOptions = selectOptions
-        .filter(option => option.toLowerCase().indexOf(inputRef.current.value.toLowerCase()) > -1);
-
-      return setCurrentlyShowingSelectOptions(filteredOptions);
+    if (selectOptions) {
+      if (inputRef.current.value === '' || !inputRef.current.value) {
+        return setCurrentlyShowingSelectOptions(selectOptions);
+      } else {
+  
+        const filteredOptions = selectOptions
+          .filter(option => option.toLowerCase().indexOf(inputRef.current.value.toLowerCase()) > -1);
+  
+        return setCurrentlyShowingSelectOptions(filteredOptions);
+      }
     }
   }, [inputRef.current?.value]);
 

@@ -19,7 +19,7 @@ import {
 } from '../styles/pages/Calculator';
 
 import eletronicDevices from '../../public/aparelhosEletronicos.json';
-interface EltronicItem {
+interface EletronicItem {
   name: string;
   power: string;
   hours: string;
@@ -29,7 +29,7 @@ const Calculator: React.FC = () => {
   const { updateEletronicItems, eletronicItems } = useCalculator();
   const router = useRouter();
 
-  const [newEletronicItems, setNewEletronicItems] = useState<EltronicItem[]>(() => {
+  const [newEletronicItems, setNewEletronicItems] = useState<EletronicItem[]>(() => {
 
     if (eletronicItems) {
       return eletronicItems;
@@ -79,6 +79,16 @@ const Calculator: React.FC = () => {
     router.push('/results');
   }, [newEletronicItems, router]);
 
+  const eletronicItemPower = (eletronicItem: EletronicItem): string => {    
+    const findItem = eletronicDevices.find(item => item.name === eletronicItem.name);
+    
+    if (!eletronicItem.name && findItem) {
+      return String(findItem.power)
+    }
+
+    return eletronicItem.power
+  }
+
   return (
     <>
       <SEO 
@@ -118,7 +128,7 @@ const Calculator: React.FC = () => {
                       />
                       <Input 
                         label="Potência (Watts)" 
-                        value={eletronicItem.power}
+                        value={eletronicDevices.find(item => item.name === eletronicItem.name) ? eletronicDevices.find(item => item.name === eletronicItem.name).power : eletronicItem.power}
                         onChange={e => setEletronicItemValue(index, 'power', e.target.value)}
                         centered
                       />
