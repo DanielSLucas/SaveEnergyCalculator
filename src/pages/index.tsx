@@ -67,8 +67,13 @@ export default function Home() {
             <article>
               <h1>Nossa Solução</h1>
               <p>
-                Desenvolvemos uma calculadora que permite voce calcular 
-                seu gasto energético do mes ou somente de um aparelho especifico.
+                O save Energy Calculator foi desenvolvido para que você tenha um 
+                conhecimento melhor da sua energia elétrica consumida por cada 
+                aparelho da sua residência. Você seleciona os equipamentos, 
+                informa a potência e o tempo de uso diário de cada aparelho 
+                eletrônico e nossa calculadora estimara o consumo e o custo 
+                total. No final disponibilizaremos um gráfico para que você 
+                possa visualizar de maneira mais clara seu consumo.
               </p> 
               <span>
                 <Button type="button" onClick={() => handleNavigate('/calculator')}>
