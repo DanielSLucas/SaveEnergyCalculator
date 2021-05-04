@@ -49,6 +49,11 @@ export const MainSection = styled.div`
       margin-bottom: 1rem;
     }
 
+    h2 {
+      margin: 1rem 0;
+      color: #006959;
+    }
+
     img {
       width: 100%;
       height: auto;
@@ -59,6 +64,14 @@ export const MainSection = styled.div`
       margin-top: 1rem;
       text-align: justify;
       text-indent: 3rem;
+      color: #9a9a9a;
+    }
+
+    article ul {
+      margin-left: 3rem;
+      font-size: 1.25rem;
+      margin-top: 1rem;
+      text-align: justify;
       color: #9a9a9a;
     }
   }

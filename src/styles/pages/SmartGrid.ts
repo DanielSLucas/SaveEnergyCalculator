@@ -50,11 +50,8 @@ export const MainSection = styled.div`
     }
     
     h2 {
-      font-family: Roboto Condensed;
-      font-weight: bold;
-      font-size: 2rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin: 1rem 0;
+      color: #006959;
     }
 
     ul {
