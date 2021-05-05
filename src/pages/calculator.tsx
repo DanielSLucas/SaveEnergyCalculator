@@ -73,21 +73,11 @@ const Calculator: React.FC = () => {
 
   const handleSubmit = useCallback((event: FormEvent) => {
     event.preventDefault();
-
+    console.log(newEletronicItems);
     updateEletronicItems(newEletronicItems);
 
     router.push('/results');
   }, [newEletronicItems, router]);
-
-  const eletronicItemPower = (eletronicItem: EletronicItem): string => {    
-    const findItem = eletronicDevices.find(item => item.name === eletronicItem.name);
-    
-    if (!eletronicItem.name && findItem) {
-      return String(findItem.power)
-    }
-
-    return eletronicItem.power
-  }
 
   return (
     <>
@@ -128,8 +118,15 @@ const Calculator: React.FC = () => {
                       />
                       <Input 
                         label="Potência (Watts)" 
-                        value={eletronicDevices.find(item => item.name === eletronicItem.name) ? eletronicDevices.find(item => item.name === eletronicItem.name).power : eletronicItem.power}
+                        value={eletronicItem.power}
                         onChange={e => setEletronicItemValue(index, 'power', e.target.value)}
+                        placeholder={
+                          eletronicDevices
+                            .find(item => item.name === eletronicItem.name) ? 
+                              "sugestão: " + eletronicDevices.find(item => item.name === eletronicItem.name).power.toString()
+                              : 
+                              ''
+                        }  
                         centered
                       />
                       <Input 
