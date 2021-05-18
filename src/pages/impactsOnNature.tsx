@@ -1,10 +1,11 @@
-import { useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import SEO from '../components/SEO';
 import NavBar from '../components/NavBar';
+import ReadingProgressBar from '../components/ReadingProgressBar';
 
 import {
   Container,
@@ -17,6 +18,7 @@ import Footer from '../components/Footer';
 import Link from 'next/link';
 
 const ImpactsOnNature: React.FC = () => {
+  const containerRef = useRef(null);
   const router = useRouter();
 
   const handleGoBack = useCallback(() => {
@@ -30,11 +32,10 @@ const ImpactsOnNature: React.FC = () => {
         description="Impactos do consumo de energia na natureza"
         shouldExludeTitleSuffix
       />
-
-      <Container>
+      <ReadingProgressBar containerRef={containerRef}/>
+      <Container ref={containerRef}>
         <NavBar />
-
-        <ContentWrapper>
+        <ContentWrapper >
 
           <Header>
             <button type="button" onClick={handleGoBack}>

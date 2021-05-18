@@ -1,10 +1,11 @@
-import { useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { FiArrowLeft } from 'react-icons/fi';
 import Image from 'next/image';
 
 import SEO from '../components/SEO';
 import NavBar from '../components/NavBar';
+import ReadingProgressBar from '../components/ReadingProgressBar';
 
 import { 
   Container, 
@@ -17,6 +18,7 @@ import Footer from '../components/Footer';
 
 const SmartGrid: React.FC = () => {
   const router = useRouter();
+  const containerRef = useRef(null);
   
   const handleGoBack = useCallback(() => {
     router.back();
@@ -29,8 +31,8 @@ const SmartGrid: React.FC = () => {
         description="Uma maneira inteligente de produzir e consumir energia"
         shouldExludeTitleSuffix
       />
-
-      <Container>
+      <ReadingProgressBar containerRef={containerRef}/>
+      <Container ref={containerRef}>
         <NavBar />
 
         <ContentWrapper>

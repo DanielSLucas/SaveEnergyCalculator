@@ -111,13 +111,15 @@ const Calculator: React.FC = () => {
                     <InputGroup key={index}>
                       <Input 
                         label="Eletrônico"
+                        name={`${index}-eletronicItem-name`}
                         value={eletronicItem.name}
                         onChange={e => setEletronicItemValue(index, 'name', e.target.value)}
                         setValue={(value) => setEletronicItemValue(index, 'name', value) }
                         selectOptions={eletronicDevices.map(device => device.name).sort()} 
                       />
                       <Input 
-                        label="Potência (Watts)" 
+                        label="Potência (Watts)"
+                        name={`${index}-eletronicItem-power`} 
                         value={eletronicItem.power}
                         onChange={e => setEletronicItemValue(index, 'power', e.target.value)}
                         placeholder={
@@ -130,7 +132,8 @@ const Calculator: React.FC = () => {
                         centered
                       />
                       <Input 
-                        label="Horas de uso" 
+                        label="Horas de uso"
+                        name={`${index}-eletronicItem-hours`}  
                         value={eletronicItem.hours}
                         onChange={e => setEletronicItemValue(index, 'hours', e.target.value)} 
                         centered                   
