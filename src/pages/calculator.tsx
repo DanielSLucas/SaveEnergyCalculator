@@ -73,7 +73,7 @@ const Calculator: React.FC = () => {
 
   const handleSubmit = useCallback((event: FormEvent) => {
     event.preventDefault();
-    console.log(newEletronicItems);
+
     updateEletronicItems(newEletronicItems);
 
     router.push('/results');
