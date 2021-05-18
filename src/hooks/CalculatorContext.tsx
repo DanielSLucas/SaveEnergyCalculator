@@ -1,4 +1,5 @@
 import React, { createContext, useCallback, useContext, useState } from 'react';
+import Cookies from 'js-cookie';
 
 interface EletronicItem {
   name: string;
@@ -16,7 +17,15 @@ const CalculatorContext = createContext<CalculatorContextData>(
 );
 
 export const CalculatorProvider: React.FC = ({ children }) => {
-  const [eletronicItems, setEletronicItems] = useState<EletronicItem[]>([{} as EletronicItem]); 
+  const [eletronicItems, setEletronicItems] = useState<EletronicItem[]>(() => {
+    const localStorageItems = Cookies.get("@SaveEnergyCalculator:eletronicItems");
+  
+    if (localStorageItems) {
+      return JSON.parse(localStorageItems);
+    }
+
+    return [{} as EletronicItem];
+  }); 
   
   const updateEletronicItems = useCallback((eletronicItems: Omit<EletronicItem, "kWh">[]) => {
     const formattedEletronicItems = eletronicItems.map(eletronicItem => {
@@ -27,7 +36,7 @@ export const CalculatorProvider: React.FC = ({ children }) => {
         kWh: String(kWh),
       }
     });
-    console.log(formattedEletronicItems);
+    Cookies.set("@SaveEnergyCalculator:eletronicItems", JSON.stringify(formattedEletronicItems));
     setEletronicItems(formattedEletronicItems);
   }, [])
 

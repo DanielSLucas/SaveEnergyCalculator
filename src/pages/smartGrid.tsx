@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { FiArrowLeft } from 'react-icons/fi';
+import Image from 'next/image';
 
 import SEO from '../components/SEO';
 import NavBar from '../components/NavBar';
@@ -9,7 +10,8 @@ import {
   Container, 
   ContentWrapper, 
   Header, 
-  MainSection, 
+  MainSection,
+  ImageContainer,
 } from '../styles/pages/SmartGrid';
 import Footer from '../components/Footer';
 
@@ -43,10 +45,15 @@ const SmartGrid: React.FC = () => {
             <section>
               <h1>Smart grid</h1>
 
-              <img 
-                src="https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2018/06/12_pl540_unesco1.jpg" 
-                alt="Natureza"
-              />
+              <ImageContainer>
+                <div>
+                  <Image
+                    width={1280}
+                    height={884}
+                    src="/images/smartGridImage.jpeg"
+                  />
+                </div>
+              </ImageContainer>
 
               <p>
                 Nossa rede elétrica foi construída há mais de 100 anos e até hoje 

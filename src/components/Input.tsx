@@ -18,24 +18,32 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   setValue?(string): void;
 }
 
-const Input: React.FC<InputProps> = ({ 
-  label, name, isCheckBox, selectOptions, setValue, centered, ...rest 
+const Input: React.FC<InputProps> = ({
+  label, name, isCheckBox, selectOptions, setValue, centered, ...rest
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
   const [isShowingOptins, setIsShowingOptins] = useState(false);
+  const [currentlyShowingSelectOptions, setCurrentlyShowingSelectOptions] = useState(selectOptions);
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
-  }, []);
+    if (selectOptions) {
+      setIsShowingOptins(true);
+    }    
+  }, [selectOptions]);
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
-
+    if (selectOptions) {
+      setTimeout(() => {
+        setIsShowingOptins(false);
+      }, 100);
+    }    
     setIsFilled(!!inputRef.current?.value);
-  }, []);
+  }, [selectOptions]);
 
   const toggleOptions = useCallback(() => {
     setIsShowingOptins(!isShowingOptins);
@@ -43,8 +51,23 @@ const Input: React.FC<InputProps> = ({
 
   const handleOptionSelected = useCallback((optionValue: string) => {
     setValue(optionValue);
+    setIsFilled(true);
     setIsShowingOptins(false);
   }, []);
+
+  useEffect(() => {
+    if (selectOptions) {
+      if (inputRef.current.value === '' || !inputRef.current.value) {
+        return setCurrentlyShowingSelectOptions(selectOptions);
+      } else {
+  
+        const filteredOptions = selectOptions
+          .filter(option => option.toLowerCase().indexOf(inputRef.current.value.toLowerCase()) > -1);
+  
+        return setCurrentlyShowingSelectOptions(filteredOptions);
+      }
+    }
+  }, [inputRef.current?.value]);
 
   return (
     <Container
@@ -73,9 +96,9 @@ const Input: React.FC<InputProps> = ({
       {isShowingOptins && (
         <DropdownContainer>
           <ul>
-            {selectOptions.map((option, index) => (
+            {currentlyShowingSelectOptions.map((option, index) => (
               <li key={index}>
-                <button type="button" onClick={() =>  handleOptionSelected(option)}>
+                <button type="button" onClick={() => handleOptionSelected(option)}>
                   {option}
                 </button>
               </li>

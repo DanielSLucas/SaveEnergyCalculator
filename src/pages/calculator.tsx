@@ -18,46 +18,54 @@ import {
   ButtonsGroup 
 } from '../styles/pages/Calculator';
 
-interface EltronicItem {
+import eletronicDevices from '../../public/aparelhosEletronicos.json';
+interface EletronicItem {
   name: string;
   power: string;
   hours: string;
 }
 
 const Calculator: React.FC = () => {
-  const { updateEletronicItems } = useCalculator();
+  const { updateEletronicItems, eletronicItems } = useCalculator();
   const router = useRouter();
 
-  const [eletronicItems, setEletronicItems] = useState<EltronicItem[]>([{
-    name: "", power: "", hours: ""
-  }]);
+  const [newEletronicItems, setNewEletronicItems] = useState<EletronicItem[]>(() => {
+
+    if (eletronicItems) {
+      return eletronicItems;
+    }
+
+    return [{
+      name: "", power: "", hours: ""
+    }];
+  });
 
   const addNewScheduleItem = useCallback(() => {
-    setEletronicItems([
-      ...eletronicItems,
+    setNewEletronicItems([
+      ...newEletronicItems,
       { name: "", power: "", hours: "" }
     ])
-  }, [eletronicItems]);
+  }, [newEletronicItems]);
 
   const setEletronicItemValue = useCallback(
     (position: number, field: string, value: string) => {
-      const updateEletronicItems = eletronicItems.map((eletronicItem, index) => {
+      const updateEletronicItems = newEletronicItems.map((eletronicItem, index) => {
         if (index === position) {
           return { ...eletronicItem, [field]: value };
         }
         return eletronicItem;
       });
-      setEletronicItems(updateEletronicItems);
+      setNewEletronicItems(updateEletronicItems);
     }, 
-    [eletronicItems]
+    [newEletronicItems]
   );
 
   const removeEletronicItem = useCallback((position: number) => {
-    const updateEletronicItems = eletronicItems.filter((_item, index) => index !== position);    
+    const updateEletronicItems = newEletronicItems.filter((_item, index) => index !== position);    
     
-    setEletronicItems(updateEletronicItems);
+    setNewEletronicItems(updateEletronicItems);
 
-  }, [eletronicItems]);
+  }, [newEletronicItems]);
   
   const handleGoBack = useCallback(() => {
     router.back();
@@ -65,11 +73,11 @@ const Calculator: React.FC = () => {
 
   const handleSubmit = useCallback((event: FormEvent) => {
     event.preventDefault();
-
-    updateEletronicItems(eletronicItems);
+    console.log(newEletronicItems);
+    updateEletronicItems(newEletronicItems);
 
     router.push('/results');
-  }, [eletronicItems, router]);
+  }, [newEletronicItems, router]);
 
   return (
     <>
@@ -99,25 +107,26 @@ const Calculator: React.FC = () => {
                 <hr/>
                 
                 <form onSubmit={handleSubmit}>
-                  {eletronicItems.map((eletronicItem, index) => (
+                  {newEletronicItems.map((eletronicItem, index) => (
                     <InputGroup key={index}>
                       <Input 
                         label="Eletrônico"
                         value={eletronicItem.name}
                         onChange={e => setEletronicItemValue(index, 'name', e.target.value)}
                         setValue={(value) => setEletronicItemValue(index, 'name', value) }
-                        selectOptions={[
-                          "Geladeira", 
-                          "Chuveiro", 
-                          "Secador", 
-                          "Máquina de lavar", 
-                          "Microondas"
-                        ]} 
+                        selectOptions={eletronicDevices.map(device => device.name).sort()} 
                       />
                       <Input 
                         label="Potência (Watts)" 
                         value={eletronicItem.power}
                         onChange={e => setEletronicItemValue(index, 'power', e.target.value)}
+                        placeholder={
+                          eletronicDevices
+                            .find(item => item.name === eletronicItem.name) ? 
+                              "sugestão: " + eletronicDevices.find(item => item.name === eletronicItem.name).power.toString()
+                              : 
+                              ''
+                        }  
                         centered
                       />
                       <Input 

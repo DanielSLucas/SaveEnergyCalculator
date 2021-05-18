@@ -50,11 +50,8 @@ export const MainSection = styled.div`
     }
     
     h2 {
-      font-family: Roboto Condensed;
-      font-weight: bold;
-      font-size: 2rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin: 1rem 0;
+      color: #006959;
     }
 
     ul {
@@ -96,4 +93,24 @@ export const MainSection = styled.div`
       width: 70%;   
     }
   } 
+`;
+
+export const ImageContainer = styled.div`
+  width: 100%;
+
+  margin: 2rem 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  div {
+    max-width: 32rem;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;
