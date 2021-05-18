@@ -76,7 +76,7 @@ export default function Home() {
                 possa visualizar de maneira mais clara seu consumo.
               </p> 
               <span>
-                <Button type="button" onClick={() => handleNavigate('/calculator')}>
+                <Button type="button" id="calculadora" onClick={() => handleNavigate('/calculator')}>
                   Acessar!
                 </Button>
               </span>                           
