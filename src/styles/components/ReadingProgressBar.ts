@@ -9,5 +9,5 @@ export const Container = styled.div<ContainerProps>`
   height: 0.25rem;
   width: ${(props) => `${props.readingProgress}%`};
   top: 5.5rem;
-  background: linear-gradient(168.03deg, #FDC54F -13.53%, #F79B3D 140.14%);
+  background: #005C4E;
 `;

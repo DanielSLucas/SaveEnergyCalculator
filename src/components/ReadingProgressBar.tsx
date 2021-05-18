@@ -34,7 +34,6 @@ const ReadingProgressBar: React.FC<ReadingProgressBar> = ({ containerRef }) => {
     return () => window.removeEventListener("scroll", scrollListener);
   });
 
-  // return <div className={`reading-progress-bar`} style={{width: `${readingProgress}%`}} />;
   return <Container readingProgress={readingProgress}/>
 };
 
