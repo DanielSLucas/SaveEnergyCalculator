@@ -94,3 +94,23 @@ export const MainSection = styled.div`
     }
   } 
 `;
+
+export const ImageContainer = styled.div`
+  width: 100%;
+
+  margin: 2rem 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  div {
+    max-width: 32rem;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+`;

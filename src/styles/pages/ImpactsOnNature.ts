@@ -67,6 +67,14 @@ export const MainSection = styled.div`
       color: #9a9a9a;
     }
 
+    p a {
+      font-weight: bold;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+
     article ul {
       margin-left: 3rem;
       font-size: 1.25rem;
