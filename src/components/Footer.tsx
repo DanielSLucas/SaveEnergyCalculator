@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import { FiMail } from 'react-icons/fi';
 import {
   Content,
   FooterContainer,
@@ -17,13 +17,15 @@ const Footer: React.FC = () => {
           <Links>
             <List>
               <strong>Projeto integrador UNISAL</strong>
-              <ul>
-                <li>Daniel Lucas</li>
-                <li>Fernando Martins</li>
-                <li>Liandra Meirelles</li>
-                <li>Victor Emanuel</li>
-                <li>Vitor Aarão</li>
-              </ul>
+              <address>
+                <ul>
+                  <li><a href="mailto:daniellucas-pms@hotmail.com"><FiMail/> Daniel Lucas</a></li>
+                  <li><a href="mailto:bernadowolfes@gmail.com"><FiMail/> Fernando Martins</a></li>
+                  <li><a href="mailto:meirellesliandra@gmail.com"><FiMail/> Liandra Meirelles</a></li>
+                  <li><a href="mailto:victoraarao16@gmail.com"><FiMail/> Victor Aarão</a></li>
+                  <li><a href="mailto:vitaodark@gmail.com"><FiMail/> Vitor Emanuel</a></li>
+                </ul>
+              </address>              
             </List>
           </Links>
 

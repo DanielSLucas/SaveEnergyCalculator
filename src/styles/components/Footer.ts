@@ -74,6 +74,10 @@ export const List = styled.div`
     color: #ffffff;
   }
 
+  address {
+    font-style: inherit;
+  }
+
   ul {
     margin-top: 1rem;
     list-style: none;
@@ -85,6 +89,20 @@ export const List = styled.div`
     color: #fafafc;
 
     margin-bottom: 0.5rem;
+
+    a {
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;
