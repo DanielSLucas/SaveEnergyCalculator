@@ -50,78 +50,142 @@ const SmartGrid: React.FC = () => {
               <ImageContainer>
                 <div>
                   <Image
-                    width={1280}
-                    height={884}
-                    src="/images/smartGridImage.jpeg"
+                    width={1024}
+                    height={512}
+                    src="/images/smartGridImage.jpg"
                   />
                 </div>
               </ImageContainer>
 
               <p>
-                Nossa rede elétrica foi construída há mais de 100 anos e até hoje 
-                o modelo de distribuição que usamos é basicamente o mesmo. 
-                A energia produzida vai para os distribuidores e depois para as 
-                casas e negócios, porém um dos maiores problemas desse método é 
-                que a produtora de energia sempre está trabalhando ao máximo para 
-                entregar toda a energia necessária, já que só ela faz o trabalho 
-                nessa via de mão única. Portanto há sempre o risco de ocorrer o 
-                rompimento dos fios de energia ou a impossibilidade de produzir 
-                energia suficiente, ocasionando apagões e possíveis acidentes e 
-                fatalidades.
+                As “redes inteligentes” ou smart grid se trata da junção da rede 
+                de distribuição e transmissão de energia elétrica com recursos 
+                digitais da Tecnologia da Informação (TI), de forma que amplia 
+                sua eficiência operacional comparado com a rede elétrica padrão, 
+                a smart grid graças a tecnologia consegue cumprir as demandas da 
+                sociedade moderna, tanto na necessidade elétrica, quanto em relação 
+                ao desenvolvimento sustentável.
               </p>
+
+              <h2>Funcionalidade</h2>
 
               <p>
-                A Smart Grid serve para que, ao mesmo tempo que você recebe energia 
-                elétrica, você também recebe os dados dela e repasse para a distribuidora, 
-                fazendo assim uma comunicação direta de qualquer acontecimento. 
-                É enviado para o cliente os gastos instantaneamente em vez de só 
-                no final do mês, assim a pessoa recebe via e-mail, sms ou aplicativo 
-                a movimentação relacionada a sua rede elétrica, permitindo corrigir 
-                problemas de maneira remota sem ter que mandar uma equipe para o local.
-                Essa rede inteligente também poderá permitir conexão com outros tipos 
-                de fonte de energia, tipo a usina eólica e solar, permitindo que 
-                a pessoa produza e use energia de sua própria casa, podendo assim 
-                devolver para a rede caso o consumo seja menor que o que está 
-                sendo gerado.
+                Quando os sensores da rede detectam informações de algum ocorrido 
+                os dados são mandados de volta para o software central, que 
+                analisa esses dados e determina o que esta errado com a rede 
+                e o que deve ser feito para melhorar o desempenho. Por exemplo, 
+                num caso de um apagão o software detecta o local onde a tensão 
+                foi cortada e irá instruir os dispositivos na rede para mudar 
+                sua rota de distribuição para que se tenha energia enquanto uma 
+                equipe técnica é mandada ao local, podendo assim evitar acidentes
               </p>
 
-              <h2>Quais são as vantagens para os consumidores?</h2>
+              <h2>Benefícios da Smart Grid</h2>
+
+              <h3>Eficiência</h3>
 
               <p>
-                Com a sua tecnologia atual, foi desenvolvido a ferramenta chamada 
-                “medidor inteligente”, que em si, contribui para que os consumidores 
-                consigam acompanhar com facilidade e em tempo real o seu consumo. 
-                Ademais, a Smart Grids torna a rede uma via de mão dupla na 
-                transmissão de energia elétrica. Além da energia em si, haveria 
-                uma comunicação inteligente com a distribuidora de energia dando 
-                a esta uma coordenação maior em compatibilidade com a decisão e 
-                relação à sua distribuição, além de permitir fácil percepção de 
-                locais onde se está havendo desperdício de energia.
+                Ela ajuda a empresa concessionaria de energia a fornecer níveis 
+                melhores de qualidade aos clientes, mantendo a demanda enquanto 
+                diminui os custos e a emissão de carbono, ajudando o meio ambiente.
               </p>
 
-              <h2>Locais Brasileiros com a smart grid:</h2>
+              <h3>Confiabilidade</h3>
+
+              <p>
+                A rede inteligente irá detectar problemas de falhas ou declínios 
+                de desempenho e mandar para a concessionaria e sua localização, 
+                podendo ser reparado com rapidez e precisão antes que haja uma 
+                queda de energia. A rede inteligente também permite isolar o 
+                local da falha para que menos clientes sejam afetados pela falta 
+                de energia.
+              </p>
+
+              <h3>Integração de ponta</h3>
+
+              <p>
+                Para ter conexão com a rede podemos ter um medidor inteligente que 
+                ajuda na interação com o sistema de gestão dos clientes, painéis 
+                solares gerando energia limpa, tomadas para se carregar veículos 
+                elétricos, isso tudo vai se usar dessa interação com a rede para 
+                ter melhor desempenho. 
+              </p>
+
+              <h2>Medidores Inteligentes</h2>
+
+              <ImageContainer>
+                <div>
+                  <Image
+                    width={1000}
+                    height={560}
+                    src="/images/smartMeter.jpg"
+                  />
+                </div>
+              </ImageContainer>
+
+              <p>
+                Parte importante da smart grid são os medidores inteligentes 
+                (do inglês smart meter) que são responsáveis por fazer medidas 
+                do consumo elétrico de cada consumidor e enviá-los para a 
+                companhia elétrica, normalmente se enviam os dados coletados 
+                em intervalos de 15 minutos. Além dessa coleta de dados que 
+                ajuda na otimização e operação da rede elétrica, esses medidores 
+                são responsáveis por um novo modelo de cobrança de energia 
+                elétrica, onde não existe mais coleta manual dos medidores 
+                na companhia, tudo acontece automaticamente com a comunicação 
+                do medidor nas casas com a companhia elétrica.  
+              </p>
+
+              <h2>Smart grid no Brasil</h2>
+              <p>
+                No Brasil as Redes inteligentes estão em sua fase piloto, sendo 
+                aplicadas em pequenos municípios a princípio, alguns desses lugares são:
+              </p>
 
               <ul>
                 <li>
                   <p>
-                    Projeto Cidades do Futuro, realizado pela Companhia Energética 
-                    de Minas Gerais (Cemig), no município de Sete Lagoas;
+                    Parintins (Eletrobras Amazonas Energia) - Cidade de Parintins/AM
                   </p>                  
                 </li>
                 <li>
                   <p>
-                    Projeto Parintins, implantado pela Eletrobras no munícipio de Parintins (AM); 
+                    Cidade Inteligente Aquiraz (Coelce/Endesa) - Cidade de Fortaleza/CE
                   </p>                  
                 </li>
                 <li>
                   <p>
-                    Projeto InovCity, realizado pela Bandeirante, em Aparecida (SP) 
-                    e em dois municípios do Espírito Santo: Domingos Martins e Marechal Floriano;
+                    Arquipélago de Fernando de Noronha (CELPE) - Ilha de Fernando de Noronha/PE
                   </p>                  
                 </li>
                 <li>
                   <p>
-                    Projeto Cidade Inteligente Búzios, realizado pela Ampla, em Armação de Búzios (RJ).
+                    Cidades do Futuro (Cemig) - Cidade de Sete Lagoas/MG
+                  </p>                  
+                </li>
+                <li>
+                  <p>
+                    Cidade Inteligente Búzios (Ampla/Endesa Brasil) - Cidade de Búzios/RJ
+                  </p>                  
+                </li>
+                <li>
+                  <p>
+                    Smart Grid Light (Light) - Cidade do Rio de Janeiro/RJ
+                  </p>                  
+                </li>
+                <li>
+                  <p>
+                    Smart Grid (AES Eletropaulo) - Bairro do Ipiranga, São Paulo/SP
+                  </p>                  
+                </li>
+                <li>
+                  <p>
+                    InovCity (EDP Bandeirantes) - Cidade Aparecida/SP
+                  </p>                  
+                </li>
+                <li>
+                  <p>
+                    Fazenda Rio Grande - Curitiba (Copel) - Cidade de Fazenda Rio Grande/PR
                   </p>                  
                 </li>
               </ul>
@@ -138,29 +202,22 @@ const SmartGrid: React.FC = () => {
                 </li>
                 <li>
                   <p>
-                    <a href="https://www.youtube.com/watch?v=JwRTpWZReJk">
-                      What is the Smart Grid
-                    </a>
-                  </p>                  
-                </li>
-                <li>
-                  <p>
-                    <a href="https://www.youtube.com/watch?v=jjM0qE6gKmU">
-                      O que é Smart Grid
+                    <a href="https://gereportsbrasil.com.br/voc%C3%AA-sabe-o-que-%C3%A9-smart-grid-tire-suas-d%C3%BAvidas-no-ge-reports-brasil-191fc22998c4">
+                      Tire suas dúvidas sobre Smart Grid
                     </a>                     
                   </p>                  
                 </li>
                 <li>
                   <p>
-                    <a href="https://www.youtube.com/watch?v=jjM0qE6gKmU">
-                      The Smart Grid Explained – Na Understading to Everyone
+                    <a href="http://blog.minhacasasolar.com.br/smart-grid/">
+                      Conheça sobre a smart grid, a rede elétrica inteligente! 
                     </a>
                   </p>                  
                 </li>
                 <li>
                   <p>
-                    <a href="https://gereportsbrasil.com.br/voc%C3%AA-sabe-o-que-%C3%A9-smart-grid-tire-suas-d%C3%BAvidas-no-ge-reports-brasil-191fc22998c4">
-                      Tire suas dúvidas sobre Smart Grids
+                    <a href="http://redesinteligentesbrasil.org.br/index.php">
+                      Redes Inteligentes Brasil 
                     </a>                    
                   </p>                  
                 </li>

@@ -49,9 +49,13 @@ export const MainSection = styled.div`
       margin-bottom: 1rem;
     }
     
-    h2 {
+    h2,h3 {
       margin: 1rem 0;
       color: #006959;
+    }
+
+    h3 {
+      font-size: 1.4rem;
     }
 
     ul {
