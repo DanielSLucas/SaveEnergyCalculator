@@ -27,7 +27,7 @@ Para executar o projeto em ambiente de desenvolvimento basta instalar as depend√
 <img src="./screenshots/impactsOnNature.png"/>
 
 ### Smart grid
-<img src="./screenshots/smartgrid.png"/>
+<img src="./screenshots/smartGrid.png"/>
 
 ### Calculator
 <img src="./screenshots/calculator.png"/>
